@@ -1,0 +1,215 @@
+/* ==============================
+   VARIÁVEIS & RESET
+============================== */
+:root {
+    --accent: #4361ee;
+    --accent-dark: #3a0ca3;
+    --danger-soft: #fff0f0;
+    --hero-light-bg: #f0f4ff;
+    --hero-dark-bg: #0d1117;
+    --section-alt-light: #f8f9ff;
+    --section-alt-dark: #161b27;
+    --letter-space: 0.12em;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0d1117;
+    --bs-body-color: #e6edf3;
+}
+
+/* ==============================
+   TIPOGRAFIA
+============================== */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: var(--letter-space);
+    color: var(--accent);
+}
+
+.section-heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-top: 0.4rem;
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+#mainNav {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    transition: background 0.35s ease;
+}
+
+[data-bs-theme="dark"] #mainNav {
+    background: rgba(13,17,23,0.92);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.navbar-brand {
+    color: var(--accent) !important;
+    font-size: 1.15rem;
+}
+
+/* ==============================
+   HERO
+============================== */
+.hero-section {
+    background: var(--hero-light-bg);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    transition: background 0.35s ease;
+}
+
+[data-bs-theme="dark"] .hero-section {
+    background: var(--hero-dark-bg);
+}
+
+.hero-title {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.25;
+    color: var(--accent-dark);
+}
+
+[data-bs-theme="dark"] .hero-title {
+    color: #a8c0ff;
+}
+
+.hero-sub {
+    max-width: 600px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+[data-bs-theme="dark"] .hero-sub {
+    color: #8b949e;
+}
+
+/* ==============================
+   CITAÇÃO
+============================== */
+.blockquote-custom {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.25rem;
+    color: var(--accent-dark);
+}
+
+[data-bs-theme="dark"] .blockquote-custom {
+    color: #a8c0ff;
+}
+
+/* ==============================
+   SEÇÕES ALTERNADAS
+============================== */
+.section-alt {
+    background-color: var(--section-alt-light);
+    transition: background-color 0.35s ease;
+}
+
+[data-bs-theme="dark"] .section-alt {
+    background-color: var(--section-alt-dark);
+}
+
+/* ==============================
+   LISTA DE SINTOMAS
+============================== */
+.symptom-list li {
+    padding: 0.45rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+[data-bs-theme="dark"] .symptom-list li {
+    border-bottom-color: rgba(255,255,255,0.06);
+}
+
+/* ==============================
+   IMAGENS
+============================== */
+.content-img {
+    max-height: 380px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.gallery-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(67,97,238,0.25) !important;
+}
+
+/* ==============================
+   FORMULÁRIO
+============================== */
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(67,97,238,0.2);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer-custom {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    background-color: var(--section-alt-light);
+    transition: background-color 0.35s ease;
+}
+
+[data-bs-theme="dark"] .footer-custom {
+    background-color: var(--section-alt-dark);
+    border-top-color: rgba(255,255,255,0.08);
+}
+
+/* ==============================
+   BOTÃO TEMA
+============================== */
+#btnTema {
+    min-width: 140px;
+    transition: all 0.25s ease;
+}
+
+/* ==============================
+   VER MAIS
+============================== */
+#verMaisBloco {
+    transition: all 0.3s ease;
+}
+
+/* ==============================
+   RESPONSIVO
+============================== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .gallery-img {
+        height: 180px;
+    }
+}
